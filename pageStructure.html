@@ -32,7 +32,6 @@ nav {
 }
 
 
-
 /* Style the list inside the menu */
 nav ul {
   list-style-type: square;
@@ -63,25 +62,69 @@ footer {
 }
 
 /*changes the link styling and hover*/
-li a {
+a {
   display: block;
-  color: #000;
+  color: rgb(43, 43, 43);
   padding: 8px 16px;
   text-decoration: none;
 }
 
-li a:hover {
-  background-color: #555;
+a:hover {
+  background-color: rgb(107, 107, 107);
 }
 
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+.active {
+  background-color: #f7f7f7;
+  color: white;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #666;
+  color: rgb(255, 255, 255);
+  padding: 25px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/*border of the dropdown*/
+a {
+  border: 1px solid #555;
+}
+
+a {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+
+a:last-child {
+  border-bottom: none;
+}
+
+/* Responsive layout */
 @media (max-width: 600px) {
   nav, article {
     width: 100%;
     height: auto;
   }
 }
-
 
 /*page content*/
 </style>
@@ -97,12 +140,17 @@ li a:hover {
 <section>
   <nav>
     <ul>
-      <li><a href="#">Fibre optic</a></li>
-      <li><a href="#">Copper wiring</a></li>
-      <li><a href="#">Wireless</a></li>
+      <div class="dropdown">
+        <button class="dropbtn">Contents</button>
+        <div class="dropdown-content">
+          <a href="#">Fibre optic</a>
+          <a href="#">Copper wiring</a>
+          <a href="#">Wireless</a>
+          <a href="#">Wired</a>
+        </div>
     </ul>
   </nav>
-  
+
   <article>
     <h2>Wired</h2>
     <p> In this section, a list of advantages of both wired and wireless medias in each area will be listed and a conclusion will be made for which is overall the most beneficial. </p>
@@ -112,7 +160,7 @@ li a:hover {
     <li> Can connect network miles apart via copper or fibre optic </li>
     <li> Wired networks are far more secure as they cannot be accessed remotely </li>
     <li> Easy to identify connected devices </li>
-
+    <img src = "Images/wiredcables.jpg" alt = "cable diagram">
   </article>
 </section>
 
